@@ -57,12 +57,12 @@ This script relies on specific `FeatureCollection` and `Image` assets stored in 
 
     ```javascript
     // Example: Update these paths
-    var regionOfInterest = ee.FeatureCollection('projects/ee-farrelrafigame/assets/shp_jawabarat'); // CHANGE THIS
-    var faultData = ee.FeatureCollection('projects/ee-farrelrafigame/assets/patahan_jabar');       // CHANGE THIS
-    var wkpData = ee.FeatureCollection('projects/ee-farrelrafigame/assets/wkp_jabar');           // CHANGE THIS
+    var regionOfInterest = ee.FeatureCollection('users/your_username/your_asset_name'); // CHANGE THIS
+    var faultData = ee.FeatureCollection('users/your_username/your_asset_name');       // CHANGE THIS
+    var wkpData = ee.FeatureCollection('users/your_username/your_asset_name');           // CHANGE THIS
 
     // If you use validation TIFs:
-    var image1 = ee.Image("projects/ee-farrelrafigame/assets/1"); // CHANGE THIS
+    var image1 = ee.Image("users/your_username/your_asset_name"); // CHANGE THIS
     // ...and so on for image2, image3
     ```
 
@@ -135,6 +135,5 @@ This project is licensed under the [MIT License](LICENSE).
 For any questions or inquiries, please feel free to contact:
 
 * **Farrel Nugroho**
-* [Your Email Address (e.g., your.email@example.com)]
-* [Your LinkedIn Profile URL (optional)]
-* [Your ResearchGate/Google Scholar Profile URL (optional)]
+* [farrelnugroho40@gmail.com]
+* [https://scholar.google.com/citations?hl=en&user=tYurMxsAAAAJ]
