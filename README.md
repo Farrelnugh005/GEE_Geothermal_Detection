@@ -115,15 +115,15 @@ The script is logically organized into several sections for clarity and ease of 
 Here are some example outputs from running the script:
 
 * **Mean LST Map:**
-    ![Mean LST Map](images/mean_lst_map_and_BufferFault.png)
+    ![Mean LST Map](images/mean_lst_map_and_BufferFault.png.png)
     *Caption: Average Land Surface Temperature over the study period.*
 
 * **Geothermal Potential Score 2 (Hotspot & Fault Overlap):**
-    ![Score 2 Map](images/score1&2_map.png)
+    ![Score 2 Map](images/score1&2_map.png.png)
     *Caption: Areas identified with strong thermal anomalies overlapping geological fault buffers.*
 
 * **Annual LST Trend Chart:**
-    ![Annual LST Chart](images/annual_lst_chart.png)
+    ![Annual LST Chart](images/annual_lst_chart.png.png)
     *Caption: Annual mean LST trend within the defined region of interest.*
 
 ## License
