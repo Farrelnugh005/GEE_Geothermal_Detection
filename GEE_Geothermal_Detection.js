@@ -15,9 +15,9 @@
 // ===================================================================================
 
 // 1.1: Wilayah Studi & Data Geologi (Ubah sesuai path GEE Asset Anda)
-var regionOfInterest = ee.FeatureCollection('projects/ee-farrelrafigame/assets/shp_jawabarat');
-var faultData = ee.FeatureCollection('projects/ee-farrelrafigame/assets/patahan_jabar');
-var wkpData = ee.FeatureCollection('projects/ee-farrelrafigame/assets/wkp_jabar'); // Opsional, untuk validasi
+var regionOfInterest = ee.FeatureCollection('users/your_username/your_asset_name');
+var faultData = ee.FeatureCollection('users/your_username/your_asset_name');
+var wkpData = ee.FeatureCollection('users/your_username/your_asset_name'); // Opsional, untuk validasi
 
 // 1.2: Parameter Analisis Data
 var startDate = '2017-01-01';
@@ -44,9 +44,9 @@ Map.addLayer(faultData, {color: 'red'}, 'Zona Patahan', false);
 Map.addLayer(wkpData, {color: 'black'}, 'WKP Panas Bumi', false);
 
 // 2.1: Impor dan Visualisasi Aset TIF Tambahan (Hanya sebagai validasi dengan penelitian terdahulu Saepuloh et al.)
-var image1 = ee.Image("projects/ee-farrelrafigame/assets/1");
-var image2 = ee.Image("projects/ee-farrelrafigame/assets/2");
-var image3 = ee.Image("projects/ee-farrelrafigame/assets/3");
+var image1 = ee.Image("users/your_username/your_asset_name);
+var image2 = ee.Image("users/your_username/your_asset_name");
+var image3 = ee.Image("users/your_username/your_asset_name");
 
 // Definisikan parameter visualisasi untuk citra TIF
 var tifVisParams = {
