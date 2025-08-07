@@ -116,24 +116,28 @@ Here are some example outputs from running the script:
 This map displays the average LST in the study area after topographic correction, which serves as the basis for anomaly detection.
 
 ![Mean LST Map](Images/mean_lst.png)
+
 *Caption: Average Land Surface Temperature over the study period in the research area.*
 
 ### 2. Thermal Anomaly Level Layer Based on Multiples of Standard Deviation
 This map identifies areas with significantly higher surface temperatures than the average, which are interpreted as potential geothermal hotspots.
 
 ![Hotspot Map](Images/hotspot_map.png)
+
 *Caption: A visualization of thermal hotspots (positive temperature anomalies) identified by the script.*
 
 ### 3. Geothermal Potential Layer (Anomaly With Faults & GWA Overlap)
 This is the most critical final output, where hotspot areas are combined with geological fault buffers to assign a higher geothermal potential score.
 
-![Geothermal Potential Map](images/score1&2_map.png)
+![Geothermal Potential Map](Images/score1&2_map.png)
+
 *Caption: Areas with a high geothermal potential score, indicating an overlap between thermal anomalies with geological fault lines and Geothermal Working Area.*
 
 ### 4. Annual Land Surface Temperature (LST) Trend Chart
 This chart shows how the average LST changes from year to year in the study area, providing a temporal context for the spatial analysis.
 
-![Annual LST Chart](images/annual_lst_chart.png)
+![Annual LST Chart](Images/annual_lst_chart.png)
+
 *Caption: Annual mean LST trend within the defined region of interest.*
 
 ## License
