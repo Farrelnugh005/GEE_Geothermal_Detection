@@ -39,11 +39,11 @@ Follow these steps to run the script in your Google Earth Engine environment:
 ### Prerequisites
 
 * A Google Earth Engine account.
-* Access to the GEE Code Editor (`code.earthengine.google.com`).
+* Access to the GEE Code Editor (`https://code.earthengine.google.com`).
 
 ### GEE Asset Setup
 
-This script relies on specific `FeatureCollection` and `Image` assets stored in Google Earth Engine. **You will need to upload your own spatial data (e.g., shapefiles for your region of interest, fault lines, or WKP areas) as assets to your GEE account and update the paths in the script.**
+This script relies on specific `FeatureCollection` and `Image` assets stored in Google Earth Engine. **You will need to upload your own spatial data (e.g., shapefiles for your region of interest, fault lines, or GWA areas) as assets to your GEE account and update the paths in the script.**
 
 1.  **Upload Your Assets:**
     * In the GEE Code Editor, go to the "Assets" tab (left panel).
@@ -51,7 +51,7 @@ This script relies on specific `FeatureCollection` and `Image` assets stored in 
     * Follow the prompts to upload your data. Remember the asset ID (e.g., `users/your_username/your_asset_name`).
 
 2.  **Update Script Paths:**
-    * Open the `script Final.js` file.
+    * Open the `GEE_Geothermal_Detection.js` file.
     * Navigate to **"BAGIAN 1: PARAMETER YANG DAPAT DIUBAH (DISESUAIKAN DENGAN DATA USER)"**.
     * Modify the `ee.FeatureCollection` and `ee.Image` paths to point to your newly uploaded assets.
 
@@ -78,7 +78,7 @@ Adjust the following parameters in **"BAGIAN 1: PARAMETER YANG DAPAT DIUBAH"** w
 
 ### Running the Script
 
-1.  **Open the Script:** Copy the entire content of `script Final.js` and paste it into a new script in your GEE Code Editor.
+1.  **Open the Script:** Copy the entire content of `GEE_Geothermal_Detection.js` and paste it into a new script in your GEE Code Editor.
 2.  **Update Asset Paths & Parameters:** As described above, ensure all asset paths and analysis parameters are correctly set for your study.
 3.  **Run:** Click the "Run" button in the GEE Code Editor.
 
@@ -101,7 +101,7 @@ Adjust the following parameters in **"BAGIAN 1: PARAMETER YANG DAPAT DIUBAH"** w
 The script is logically organized into several sections for clarity and ease of modification:
 
 * **BAGIAN 1: PARAMETER YANG DAPAT DIUBAH:** User-definable parameters for the study region, geological data, analysis period, and scoring thresholds.
-* **BAGIAN 2: PENYIAPAN PETA DAN VISUALISASI AWAL:** Initializes the map view and adds initial layers (study region, faults, WKP, and optional validation TIFs).
+* **BAGIAN 2: PENYIAPAN PETA DAN VISUALISASI AWAL:** Initializes the map view and adds initial layers (study region, faults, GWA, and optional validation TIFs).
 * **BAGIAN 3: FUNGSI-FUNGSI UTAMA UNTUK PEMROSESAN CITRA:** Contains core functions for Landsat 8 preparation (scaling, cloud masking), water masking (MNDWI), urban masking (Copernicus Landcover), LST calculation (Mono-Window), and elevation correction.
 * **BAGIAN 4: PEMROSESAN DATA UTAMA & PERHITUNGAN LST:** Orchestrates the application of processing functions to the Landsat 8 collection, performs elevation correction, and generates the final mean LST map and annual LST collection.
 * **BAGIAN 5: DETEKSI ANOMALI & SKORING:** Calculates regional LST statistics, defines anomaly thresholds, creates anomaly layers, and computes the geothermal potential scores. It also prints key information to the console.
@@ -110,21 +110,31 @@ The script is logically organized into several sections for clarity and ease of 
 
 ## Example Outputs
 
-*(Optional: Create an `images/` folder in your GitHub repository and add screenshots here. Then link them as below.)*
-
 Here are some example outputs from running the script:
 
-* **Mean LST Map:**
-    ![Mean LST Map](images/mean_lst_map_and_BufferFault.png.png)
-    *Caption: Average Land Surface Temperature over the study period.*
+### 1. Mean Land Surface Temperature (LST) Layer After Topographic Correction
+This map displays the average LST in the study area after topographic correction, which serves as the basis for anomaly detection.
 
-* **Geothermal Potential Score 2 (Hotspot & Fault Overlap):**
-    ![Score 2 Map](images/score1&2_map.png.png)
-    *Caption: Areas identified with strong thermal anomalies overlapping geological fault buffers.*
+![Mean LST Map](Images/mean_lst.png)
+*Caption: Average Land Surface Temperature over the study period in the research area.*
 
-* **Annual LST Trend Chart:**
-    ![Annual LST Chart](images/annual_lst_chart.png.png)
-    *Caption: Annual mean LST trend within the defined region of interest.*
+### 2. Thermal Anomaly Level Layer Based on Multiples of Standard Deviation
+This map identifies areas with significantly higher surface temperatures than the average, which are interpreted as potential geothermal hotspots.
+
+![Hotspot Map](Images/hotspot_map.png)
+*Caption: A visualization of thermal hotspots (positive temperature anomalies) identified by the script.*
+
+### 3. Geothermal Potential Layer (Anomaly With Faults & GWA Overlap)
+This is the most critical final output, where hotspot areas are combined with geological fault buffers to assign a higher geothermal potential score.
+
+![Geothermal Potential Map](images/score1&2_map.png)
+*Caption: Areas with a high geothermal potential score, indicating an overlap between thermal anomalies with geological fault lines and Geothermal Working Area.*
+
+### 4. Annual Land Surface Temperature (LST) Trend Chart
+This chart shows how the average LST changes from year to year in the study area, providing a temporal context for the spatial analysis.
+
+![Annual LST Chart](images/annual_lst_chart.png)
+*Caption: Annual mean LST trend within the defined region of interest.*
 
 ## License
 
